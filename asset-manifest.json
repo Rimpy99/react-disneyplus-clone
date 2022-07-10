@@ -1,12 +1,15 @@
 {
   "files": {
-    "main.css": "/react-disneyplus-clone/static/css/main.31d6cfe0.css",
-    "main.js": "/react-disneyplus-clone/static/js/main.777a8815.js",
+    "main.css": "/react-disneyplus-clone/static/css/main.b41036a8.css",
+    "main.js": "/react-disneyplus-clone/static/js/main.a7ae0780.js",
+    "static/media/disney-logo.png": "/react-disneyplus-clone/static/media/disney-logo.6e15dcf1ed49d3e8849d.png",
+    "static/media/user.jpg": "/react-disneyplus-clone/static/media/user.f4bcd630c5634745829f.jpg",
     "index.html": "/react-disneyplus-clone/index.html",
-    "main.777a8815.js.map": "/react-disneyplus-clone/static/js/main.777a8815.js.map"
+    "main.b41036a8.css.map": "/react-disneyplus-clone/static/css/main.b41036a8.css.map",
+    "main.a7ae0780.js.map": "/react-disneyplus-clone/static/js/main.a7ae0780.js.map"
   },
   "entrypoints": [
-    "static/css/main.31d6cfe0.css",
-    "static/js/main.777a8815.js"
+    "static/css/main.b41036a8.css",
+    "static/js/main.a7ae0780.js"
   ]
 }
