@@ -1,0 +1,129 @@
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo{
+    width: 80px;
+}
+
+.nav-list{
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-link{
+    display: flex;
+    align-items: center;
+    padding: 25px 35px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-page-title{
+    margin: 0 15px;
+    position: relative;
+}
+
+.nav-page-title::after{
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    opacity: 0;
+    transition: all .2s ease-in;
+}
+
+.nav-link:hover .nav-page-title::after{
+    width: 100%;
+    opacity: 1;
+}
+
+.profile{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 240px;
+    padding: 0 20px;
+    font-size: 15px;
+    color: white;
+    border-top: 1px solid rgba(88, 88, 88, 0);
+    border-left: 1px solid rgba(88, 88, 88, 0);
+    transition: all .1s ease-in;
+    position: relative;
+}
+
+.profile:hover{
+    border-top: 1px solid rgb(88, 88, 88);
+    border-left: 1px solid rgb(88, 88, 88);
+    background-color: rgb(27, 27, 27);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.user-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 15px;
+}
+
+.settings-container{
+    width: 240px;
+    height: 300px;
+    border-bottom: 1px solid rgb(88, 88, 88);
+    border-left: 1px solid rgb(88, 88, 88);
+    background-color: rgb(27, 27, 27);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    position: absolute;
+    top: 100%;
+    left: -1px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.settings-option{
+    font-family: 'Noto Sans', sans-serif;
+    color: rgb(216, 216, 216);
+    padding: 13px 0;
+    cursor: pointer;
+}
+
+.settings-option:hover{
+    color: white;
+}
+
+.add-profile-container:hover .add-profile-btn{
+    background-color: rgb(88, 88, 88);
+}
+
+.add-profile-container{
+    display: flex;
+    align-items: center;
+}
+
+.add-profile-btn{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(46, 46, 46);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
