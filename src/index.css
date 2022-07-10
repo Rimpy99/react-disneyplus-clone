@@ -13,8 +13,8 @@ body{
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: rgba(60, 64, 84, 1);
-background-image: radial-gradient(circle, rgba(60, 64, 84, 1) 0%, rgba(27, 31, 47, 1) 95%);
+  background: rgb(45,48,59);
+  background: radial-gradient(circle, rgba(45,48,59,1) 0%, rgba(17,21,42,1) 100%);
 }
 
 p{

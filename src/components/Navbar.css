@@ -1,6 +1,8 @@
 .nav-container{
     display: flex;
     justify-content: space-between;
+    background: rgb(21,20,25);
+    background: linear-gradient(180deg, rgba(21,20,25,1) 19%, rgba(255,255,255,0) 100%);
 }
 
 .navigation{
@@ -114,6 +116,7 @@
 .add-profile-container{
     display: flex;
     align-items: center;
+    border-top: 1px solid rgb(46, 46, 46);
 }
 
 .add-profile-btn{

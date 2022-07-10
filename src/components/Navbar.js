@@ -89,7 +89,7 @@ const Navbar = () => {
                 onMouseOver={()=>setIsProfileOnHover(true)} 
                 onMouseOut={()=>setIsProfileOnHover(false)}
             >
-                <p>Tom</p>
+                <p>Paul</p>
                 <img src={require("./../assets/images/user.jpg")} alt="user" className="user-img"/>
                 {isProfileOnHover && 
                     <motion.div 
