@@ -81,7 +81,6 @@
 
 .settings-container{
     width: 240px;
-    height: 300px;
     border-bottom: 1px solid rgb(88, 88, 88);
     border-left: 1px solid rgb(88, 88, 88);
     background-color: rgb(27, 27, 27);
@@ -90,7 +89,7 @@
     position: absolute;
     top: 100%;
     left: -1px;
-    padding: 10px;
+    padding: 0 10px;
 
     display: flex;
     flex-direction: column;
