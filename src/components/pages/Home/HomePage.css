@@ -1,0 +1,17 @@
+.entrance-slide{
+    padding-top: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.entrance-slide-image{
+    width: 86%;
+    position: relative;
+}
+
+.entrance-slide-title{
+    width: 25vw;
+    position: absolute;
+    left: 15vw;
+}

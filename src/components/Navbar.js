@@ -2,14 +2,13 @@ import "./Navbar.css"
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 //react-icons
 import { AiFillHome, AiFillStar } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
-import { BsPlusLg } from "react-icons/bs";
 import { RiMovie2Fill } from "react-icons/ri";
-import { BsDisplayFill } from "react-icons/bs";
+import { BsDisplayFill, BsThreeDotsVertical, BsPlusLg } from "react-icons/bs";
 
 //animation variants
 const settingsContainerVariants = {
@@ -37,50 +36,122 @@ const settingsVariants = {
     }
 }
 
+const dropdownVariants = {
+    hidden: {
+        opacity: 0,
+    },
+    visible: {
+        opacity: 1,
+        transition: {
+            delay: ".3",
+        }
+    }
+}
+
 const Navbar = () => {
 
     const [isProfileOnHover, setIsProfileOnHover] = useState(false);
+    const [areDotsOnHover, setAreDotsOnHover] = useState(false);
 
     return(
         <div className="nav-container">
             <div className="navigation">
                 <Link to="/"><img src={require("./../assets/images/disney-logo.png")} alt="disney logo" className="logo"/></Link>
                 <ul className="nav-list">
-                    <li className="nav-item">
+                    <li>
                         <Link to="/" className="nav-link">
-                            <AiFillHome/>
+                            <div className="nav-icon">
+                                <AiFillHome/>
+                            </div>
                             <p className="nav-page-title nav-page-title-first">HOME</p>
                         </Link>
                     </li>
-                    <li className="nav-item">
+                    <li>
                         <Link to="/search" className="nav-link">
-                            <FiSearch/>
+                            <div className="nav-icon">
+                                <FiSearch/>
+                            </div>
                             <p className="nav-page-title">SEARCH</p>
                         </Link>
                     </li>
-                    <li className="nav-item">
+                    <li>
                         <Link to="/watchlist" className="nav-link">
-                            <BsPlusLg/>
+                            <div className="nav-icon">
+                                <BsPlusLg/>
+                            </div>
                             <p className="nav-page-title">WATCHLIST</p>
                         </Link>
                     </li>
-                    <li className="nav-item">
+                    <li className="hidden-in-responsive">
                         <Link to="/originals" className="nav-link">
-                            <AiFillStar/>
+                            <div className="nav-icon">
+                                <AiFillStar/>
+                            </div>
                             <p className="nav-page-title">ORIGINALS</p>
                         </Link>
                     </li>
-                    <li className="nav-item">
+                    <li className="hidden-in-responsive">
                         <Link to="/movies" className="nav-link">
-                            <RiMovie2Fill/>
+                            <div className="nav-icon">
+                                <RiMovie2Fill/>
+                            </div>
                             <p className="nav-page-title">MOVIES</p>
                         </Link>
                     </li>
-                    <li className="nav-item">
+                    <li className="hidden-in-responsive">
                         <Link to="/series" className="nav-link">
-                            <BsDisplayFill/>
+                            <div className="nav-icon">
+                                <BsDisplayFill/>
+                            </div>
                             <p className="nav-page-title">SERIES</p>
                         </Link>
+                    </li>
+                    <li className="hidden-out-of-responsive">
+                        <div 
+                            className="nav-icon"
+                            onMouseOver={()=>setAreDotsOnHover(true)} 
+                            onMouseOut={()=>setAreDotsOnHover(false)}
+                        >
+                            <div class="nav-icon-dots">
+                                <BsThreeDotsVertical color={"white"} size={20}/>
+                            </div>
+                            <AnimatePresence>
+                                {areDotsOnHover && 
+                                    <motion.div 
+                                        className="nav-dropdown"
+                                        variants={dropdownVariants}
+                                        initial="hidden"
+                                        animate="visible"
+                                        exit={{opacity: 0}}
+                                    >
+                                        <span>
+                                            <Link to="/originals" class="nav-dropdown-item">
+                                                <div className="nav-icon">
+                                                    <AiFillStar color={"white"}/>
+                                                </div>
+                                                <p className="nav-page-title-res">ORIGINALS</p>
+                                            </Link>
+                                        </span>
+                                        <span>
+                                            <Link to="/movies" class="nav-dropdown-item">
+                                                <div className="nav-icon">
+                                                    <RiMovie2Fill color={"white"}/>
+                                                </div>
+                                                <p className="nav-page-title-res">MOVIES</p>
+                                            </Link>
+                                        </span>
+                                        <span>
+                                            <Link to="/series" class="nav-dropdown-item">
+                                                <div className="nav-icon">
+                                                    <BsDisplayFill color={"white"}/>
+                                                </div>
+                                                <p className="nav-page-title-res">SERIES</p>
+                                            </Link>
+                                        </span>
+                                    </motion.div>
+                                }
+                            </AnimatePresence>
+                        </div>
                     </li>
                 </ul>
             </div>
