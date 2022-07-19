@@ -112,7 +112,7 @@ const Navbar = () => {
                             onMouseOver={()=>setAreDotsOnHover(true)} 
                             onMouseOut={()=>setAreDotsOnHover(false)}
                         >
-                            <div class="nav-icon-dots">
+                            <div className="nav-icon-dots">
                                 <BsThreeDotsVertical color={"white"} size={20}/>
                             </div>
                             <AnimatePresence>
@@ -125,7 +125,7 @@ const Navbar = () => {
                                         exit={{opacity: 0}}
                                     >
                                         <span>
-                                            <Link to="/originals" class="nav-dropdown-item">
+                                            <Link to="/originals" className="nav-dropdown-item">
                                                 <div className="nav-icon">
                                                     <AiFillStar color={"white"}/>
                                                 </div>
@@ -133,7 +133,7 @@ const Navbar = () => {
                                             </Link>
                                         </span>
                                         <span>
-                                            <Link to="/movies" class="nav-dropdown-item">
+                                            <Link to="/movies" className="nav-dropdown-item">
                                                 <div className="nav-icon">
                                                     <RiMovie2Fill color={"white"}/>
                                                 </div>
@@ -141,7 +141,7 @@ const Navbar = () => {
                                             </Link>
                                         </span>
                                         <span>
-                                            <Link to="/series" class="nav-dropdown-item">
+                                            <Link to="/series" className="nav-dropdown-item">
                                                 <div className="nav-icon">
                                                     <BsDisplayFill color={"white"}/>
                                                 </div>

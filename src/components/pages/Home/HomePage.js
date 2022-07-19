@@ -1,54 +1,66 @@
+import { useRef, useState } from 'react';
 import './HomePage.css';
 import ENTRANCE_SLIDER_DATA from '../../../assets/images/home-images/HomePageEntranceSliderData';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+import { motion } from "framer-motion";
 
 const HomePage = () => {
 
+    const [slideIndex, setSlideIndex] = useState(0);
+
+    const slider = useRef(null);
+
+    let sliderSettings={
+        dots: true,
+        customPaging: function (i) {
+          return <div className="dot"></div>;
+        },
+        dotsClass: "slick-dots slick-thumb",
+        autoplay: true,
+        infinite: true,
+        centerMode: true,
+        speed:500,
+        autoplaySpeed: 4000,
+        slidesToShow:1,
+        slidesToScroll:1,
+        beforeChange: (current, next) => {
+          console.log(current);
+          setSlideIndex(next);
+        }
+    }
+
     return(
-        <>
-            <Swiper
-                centeredSlides={true}
-                loop={true}
-                breakpoints={{
-                    320: {
-                        spaceBetween: -50,
-                    },
-                    600: {
-                        spaceBetween: -80, 
-                    },
-                    920: {
-                        spaceBetween: -120, 
-                    },
-                    1400: {
-                        spaceBetween: -160,
-                    },
-                    1700: {
-                        spaceBetween: -200,
-                    }
-                }}
-            >
+        <div className="entrance-slider">
+            <Slider ref={slider} {...sliderSettings}>
                 {
-                    ENTRANCE_SLIDER_DATA.map(sliderData => {
+                    ENTRANCE_SLIDER_DATA.map(({background, title}, index) => {
                         return (
-                            <SwiperSlide className="entrance-slide">
+                            <div className="entrance-slide" key={`slide-${index}`}>
                                 <img 
-                                    src={require(`./../../../assets/images/home-images/${sliderData.background}`)} 
+                                    src={require(`./../../../assets/images/home-images/${background}`)} 
                                     alt="film's wallpaper" 
                                     className="entrance-slide-image"
                                 />
-                                <img 
-                                    src={require(`./../../../assets/images/home-images/${sliderData.title}`)} 
-                                    alt="film's title" 
-                                    className="entrance-slide-title"
-                                />
-                            </SwiperSlide>
+                                {/* {index === slideIndex &&  */}
+                                    <motion.img
+                                        src={require(`./../../../assets/images/home-images/${title}`)} 
+                                        alt="film's title"
+                                        className="entrance-slide-title"
+                                        // variants={activeSlideVariants} 
+                                        // initial="hidden" 
+                                        // animate="visible"
+                                    />
+                                {/* } */}
+                            </div>
                         )
                     })
                 }
-            </Swiper>
-        </>
+            </Slider>
+        </div>
     )
 }
 
