@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-disneyplus-clone/static/css/main.639c2a41.css",
-    "main.js": "/react-disneyplus-clone/static/js/main.80b1bc8b.js",
+    "main.css": "/react-disneyplus-clone/static/css/main.5c9eef33.css",
+    "main.js": "/react-disneyplus-clone/static/js/main.513959b5.js",
     "static/media/msmarvel-title.png": "/react-disneyplus-clone/static/media/msmarvel-title.55f254232fdd5f7812fe.png",
     "static/media/tron-title.png": "/react-disneyplus-clone/static/media/tron-title.e42331f113cdc329bbfc.png",
     "static/media/thor-title.png": "/react-disneyplus-clone/static/media/thor-title.3ee5aa015145ecca2147.png",
@@ -12,12 +12,16 @@
     "static/media/tron-bg.jpg": "/react-disneyplus-clone/static/media/tron-bg.d7006a4aaccc464616e6.jpg",
     "static/media/user.jpg": "/react-disneyplus-clone/static/media/user.f4bcd630c5634745829f.jpg",
     "static/media/ahs-title.png": "/react-disneyplus-clone/static/media/ahs-title.15a261d478c5093fa72a.png",
+    "static/media/slick.svg": "/react-disneyplus-clone/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/react-disneyplus-clone/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/react-disneyplus-clone/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/react-disneyplus-clone/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/react-disneyplus-clone/index.html",
-    "main.639c2a41.css.map": "/react-disneyplus-clone/static/css/main.639c2a41.css.map",
-    "main.80b1bc8b.js.map": "/react-disneyplus-clone/static/js/main.80b1bc8b.js.map"
+    "main.5c9eef33.css.map": "/react-disneyplus-clone/static/css/main.5c9eef33.css.map",
+    "main.513959b5.js.map": "/react-disneyplus-clone/static/js/main.513959b5.js.map"
   },
   "entrypoints": [
-    "static/css/main.639c2a41.css",
-    "static/js/main.80b1bc8b.js"
+    "static/css/main.5c9eef33.css",
+    "static/js/main.513959b5.js"
   ]
 }
