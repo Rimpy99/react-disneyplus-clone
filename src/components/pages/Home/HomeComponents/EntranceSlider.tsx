@@ -35,15 +35,15 @@ const EntranceSlider: React.FC = () => {
 
     let sliderSettings={
         dots: true,
-        customPaging: function () {
-          return <div className="dot"></div>;
+        customPaging: function (i: number) {
+          return <div className="dot">{i}</div>;
         },
         dotsClass: "slick-dots slick-thumb",
         autoplay: true,
+        autoplaySpeed: 4000,
         infinite: true,
         centerMode: true,
         speed:400,
-        autoplaySpeed: 4000,
         slidesToShow:1,
         slidesToScroll:1,
         variableWidth: true,
