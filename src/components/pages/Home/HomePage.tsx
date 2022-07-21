@@ -1,5 +1,5 @@
 import './HomePage.css';
-import EntranceSlider from './HomeComponents/EntranceSlider.tsx';
+import EntranceSlider from './HomeComponents/EntranceSlider';
 
 const HomePage = () => {
 

@@ -13,6 +13,10 @@
     position: relative;
 }
 
+.slick-slide div{
+    outline: none
+}
+
 .entrance-slide-image{
     width: 100%;
 }
