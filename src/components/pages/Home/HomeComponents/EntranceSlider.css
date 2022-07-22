@@ -1,11 +1,14 @@
 .entrance-slider{
     position: relative;
-    height: 22.8vw;
-    width: 100vw;
-    margin-top: 20px;
+    width: 100%;
+    margin-top: 30px;
 }
 
+/* Slider */
+
 .entrance-slide{
+    width: 90vw;
+    height: 24vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,11 +17,15 @@
 }
 
 .slick-slide div{
-    outline: none
+    outline: none;
 }
 
 .entrance-slide-image{
-    width: 100%;
+    width: 90vw;
+    height: calc(100% - 2vw);
+    -webkit-box-shadow: 0 15px 20px -6px black;
+	   -moz-box-shadow: 0 15px 20px -6px black;
+	        box-shadow: 0 15px 20px -6px black;
 }
 
 .entrance-slide-image-not-active{
@@ -71,7 +78,7 @@
 
 .slick-dots.slick-thumb {
     position: absolute;
-    bottom: 5%;
+    bottom: 13%;
     right: 10%;
     width: 90px;
     display: flex;
@@ -104,9 +111,12 @@
         margin: 0;
     }
 
-    .slick-dots.slick-thumb li{
-        display: none;
+    .entrance-slide-image{
+        -webkit-box-shadow: 0 8px 10px -6px black;
+           -moz-box-shadow: 0 8px 10px -6px black;
+                box-shadow: 0 8px 10px -6px black;
     }
+
 }
 
 @media all and (max-width: 700px){

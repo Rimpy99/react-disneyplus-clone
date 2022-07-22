@@ -47,6 +47,7 @@ const EntranceSlider: React.FC = () => {
         slidesToShow:1,
         slidesToScroll:1,
         variableWidth: true,
+        adaptiveHeight: true,
         beforeChange: (current: number, next: number) => {
           setSlideIndex(next);
         }
@@ -58,7 +59,8 @@ const EntranceSlider: React.FC = () => {
                 {
                     ENTRANCE_SLIDER_DATA.map(({background, title}, index) => {
                         return (
-                            <div className="entrance-slide" key={`slide-${index}`} style={{width: "90vw"}}>
+                            // style={{width: "90vw"}}
+                            <div className="entrance-slide" key={`slide-${index}`} >
                                 <img 
                                     src={require(`./../../../../assets/images/home-images/${background}`)} 
                                     alt="film's wallpaper" 
