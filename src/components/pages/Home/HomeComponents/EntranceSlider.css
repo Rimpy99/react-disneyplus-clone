@@ -26,6 +26,7 @@
     -webkit-box-shadow: 0 15px 20px -6px black;
 	   -moz-box-shadow: 0 15px 20px -6px black;
 	        box-shadow: 0 15px 20px -6px black;
+    cursor: pointer;
 }
 
 .entrance-slide-image-not-active{
@@ -74,6 +75,14 @@
 .slider-arrow{
     color: white;
     font-size: 40px;
+}
+
+.slick-arrow{
+    display: none;
+}
+
+.slick-next{
+    display: none;
 }
 
 .slick-dots.slick-thumb {

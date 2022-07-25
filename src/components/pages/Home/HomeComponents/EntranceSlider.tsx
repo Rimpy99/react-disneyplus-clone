@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import './EntranceSlider.css';
 
-import ENTRANCE_SLIDER_DATA from '../../../../assets/images/home-images/HomePageEntranceSliderData';
+import ENTRANCE_SLIDER_DATA from '../../../../assets/images/home-images/entrance-slider/HomePageEntranceSliderData';
 
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -21,7 +21,7 @@ const activeSlideVariants = {
         opacity: 1,
         x: 0,
         transition: {
-            delay: .4,
+            delay: .2,
             duration: .5,
             type: "ease-in",
         }
@@ -39,6 +39,7 @@ const EntranceSlider: React.FC = () => {
           return <div className="dot">{i}</div>;
         },
         dotsClass: "slick-dots slick-thumb",
+        arrows: false,
         autoplay: true,
         autoplaySpeed: 4000,
         infinite: true,
@@ -62,13 +63,13 @@ const EntranceSlider: React.FC = () => {
                             // style={{width: "90vw"}}
                             <div className="entrance-slide" key={`slide-${index}`} >
                                 <img 
-                                    src={require(`./../../../../assets/images/home-images/${background}`)} 
+                                    src={require(`./../../../../assets/images/home-images/entrance-slider/${background}`)} 
                                     alt="film's wallpaper" 
                                     className={`entrance-slide-image ${index !== slideIndex && 'entrance-slide-image-not-active'}`}
                                 />
                                 {index === slideIndex && 
                                     <motion.img
-                                        src={require(`./../../../../assets/images/home-images/${title}`)} 
+                                        src={require(`./../../../../assets/images/home-images/entrance-slider/${title}`)} 
                                         alt="film's title"
                                         className="entrance-slide-title"
                                         variants={activeSlideVariants} 

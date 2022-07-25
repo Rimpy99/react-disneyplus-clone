@@ -174,7 +174,7 @@
     opacity: 1;
 }
 
-@media all and (max-width: 1350px){
+@media all and (max-width: 1490px){
     .nav-link{
         padding: 25px 20px;
     }
