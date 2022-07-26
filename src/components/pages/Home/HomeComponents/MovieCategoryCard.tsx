@@ -26,6 +26,7 @@ const MovieCategoryCard: React.FC<Props> = ({cardContent}) => {
                 src={require(`./../../../../assets/images/home-images/movie-categories/${cardContent.logo}`)} 
                 className="category-logo"
             />
+            <div className="category-border"></div>
             <video 
                 src={require(`./../../../../assets/images/home-images/movie-categories/${cardContent.background}`)} 
                 className="category-bg"
