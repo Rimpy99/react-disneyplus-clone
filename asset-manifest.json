@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-disneyplus-clone/static/css/main.335dade9.css",
-    "main.js": "/react-disneyplus-clone/static/js/main.e5da015f.js",
+    "main.js": "/react-disneyplus-clone/static/js/main.f79c7e8b.js",
     "static/media/bg-ng.mp4": "/react-disneyplus-clone/static/media/bg-ng.bf1b675d8d0beb6c25bc.mp4",
     "static/media/bg-sw.mp4": "/react-disneyplus-clone/static/media/bg-sw.90fa9f5ae993d23505b5.mp4",
     "static/media/bg-pixar.mp4": "/react-disneyplus-clone/static/media/bg-pixar.971baf2b0d1f60c27f42.mp4",
@@ -26,10 +26,10 @@
     "static/media/slick.woff": "/react-disneyplus-clone/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/react-disneyplus-clone/index.html",
     "main.335dade9.css.map": "/react-disneyplus-clone/static/css/main.335dade9.css.map",
-    "main.e5da015f.js.map": "/react-disneyplus-clone/static/js/main.e5da015f.js.map"
+    "main.f79c7e8b.js.map": "/react-disneyplus-clone/static/js/main.f79c7e8b.js.map"
   },
   "entrypoints": [
     "static/css/main.335dade9.css",
-    "static/js/main.e5da015f.js"
+    "static/js/main.f79c7e8b.js"
   ]
 }
