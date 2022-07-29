@@ -19,6 +19,6 @@ body{
   background-position: center;
 }
 
-p{
+p,h1,h2{
   font-family: 'Noto Sans', sans-serif;
 }
