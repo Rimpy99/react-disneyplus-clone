@@ -38,7 +38,6 @@ const MovieSliderRow: React.FC<Props> = ({title, fetchUrl}) => {
         speed: 500,
         slidesToShow: 5,
         slidesToScroll: 5,
-        // centerMode: true,
         variableWidth: true,
         adaptiveHeight: true,
         infinite: false,
