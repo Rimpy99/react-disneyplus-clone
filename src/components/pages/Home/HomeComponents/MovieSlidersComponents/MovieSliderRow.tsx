@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import './MovieSliderRow.css';
 
@@ -7,6 +7,8 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import axios from './../../../../../API/Axios'
+
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 
 interface Props{
@@ -18,7 +20,9 @@ const baseUrl = "https://image.tmdb.org/t/p/original/"
 
 const MovieSliderRow: React.FC<Props> = ({title, fetchUrl}) => {
 
-    const [ movies, setMovies ] = useState<any[]>([])
+    const [ movies, setMovies ] = useState<any[]>([]);
+
+    const movieSliderRef = useRef<Slider | null>(null);
 
     useEffect(()=>{
         const fetchData = async () => {
@@ -35,19 +39,20 @@ const MovieSliderRow: React.FC<Props> = ({title, fetchUrl}) => {
 
     const sliderSettings = {
         arrows: false,
-        speed: 500,
-        slidesToShow: 5,
-        slidesToScroll: 5,
+        speed: 200,
+        slidesToShow: 4,
+        slidesToScroll: 4,
         variableWidth: true,
         adaptiveHeight: true,
         infinite: false,
+
     }
 
     return(
         <div className="movie-slider-row">
             <h2 className="movie-slider-title">{title}</h2>
             <div className='movie-slider-container'>
-                <Slider {...sliderSettings}>
+                <Slider ref={movieSliderRef} {...sliderSettings}>
                     {movies.map((movie, index)=>{
                         return (
                             <div className={`movie-slide-container ${index === 0 && 'movie-slide-first'}`} key={index}>
@@ -65,6 +70,28 @@ const MovieSliderRow: React.FC<Props> = ({title, fetchUrl}) => {
                         )
                     })}
                 </Slider>
+                <button 
+                    onClick={() => 
+                        {
+                            if(movieSliderRef.current !== null){
+                                movieSliderRef.current.slickPrev()
+                            }
+                        }
+                    } 
+                    className="movie-slider-btn movie-slider-btn-prev">
+                    <div className="movie-slider-btn-prev-content"><IoIosArrowBack className="movie-slider-arrow"/></div>
+                </button>
+                <button 
+                    onClick={() => 
+                        {
+                            if(movieSliderRef.current !== null){
+                                movieSliderRef.current.slickNext()
+                            }
+                        }
+                    } 
+                    className="movie-slider-btn movie-slider-btn-next">
+                    <div className="movie-slider-btn-next-content"><IoIosArrowForward className="movie-slider-arrow"/></div>
+                </button>
             </div>
         </div>
     )

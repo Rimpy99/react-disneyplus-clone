@@ -15,11 +15,11 @@
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    transition: all .3s;
+    transition: transform .3s;
 }
 
 .category:hover{
-    scale: 1.05;
+    transform: scale(1.05)
 }
 
 .category:hover .category-bg{

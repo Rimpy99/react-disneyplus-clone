@@ -17,6 +17,7 @@ body{
   background: radial-gradient(circle, rgba(45,48,59,1) 0%, rgba(17,21,42,1) 100%);
   background-attachment: fixed;
   background-position: center;
+  overflow-x: hidden;
 }
 
 p,h1,h2{
