@@ -10,11 +10,11 @@
 }
 
 .movie-slider-container .slick-list {
-    margin: 0 0 0 -12.79vw;
+    margin: 0 0 0 -11.65vw;
 }
 
 .movie-slide-container{
-    margin: 0 5px;
+    margin: 0 .1vw;
     position: relative;
     height: calc(9.5vw + 0.05*9.5vw + 30px);
 }
@@ -73,7 +73,7 @@
 }
 
 .movie-slider-btn{
-    width: 4.45vw;
+    width: 5.4vw;
     background-color: rgba(0, 0, 0, .5);
     height: 9.6vw;
     cursor: pointer;
@@ -112,4 +112,8 @@
 .movie-slider-arrow{
     color: white;
     font-size: 40px;
+}
+
+.movie-slider-btn-not-active{
+    display: none;
 }

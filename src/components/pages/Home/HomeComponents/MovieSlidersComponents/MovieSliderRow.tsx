@@ -21,6 +21,7 @@ const baseUrl = "https://image.tmdb.org/t/p/original/"
 const MovieSliderRow: React.FC<Props> = ({title, fetchUrl}) => {
 
     const [ movies, setMovies ] = useState<any[]>([]);
+    const [ slideIndex, setSlideIndex ] = useState<number>(0)
 
     const movieSliderRef = useRef<Slider | null>(null);
 
@@ -37,6 +38,10 @@ const MovieSliderRow: React.FC<Props> = ({title, fetchUrl}) => {
         }
     }, [fetchUrl]);
 
+    useEffect(()=>{
+        console.log(slideIndex)
+    },[slideIndex])
+
     const sliderSettings = {
         arrows: false,
         speed: 200,
@@ -45,7 +50,9 @@ const MovieSliderRow: React.FC<Props> = ({title, fetchUrl}) => {
         variableWidth: true,
         adaptiveHeight: true,
         infinite: false,
-
+        beforeChange: (current: number, next: number) => {
+            setSlideIndex(next);
+        }
     }
 
     return(
@@ -78,7 +85,7 @@ const MovieSliderRow: React.FC<Props> = ({title, fetchUrl}) => {
                             }
                         }
                     } 
-                    className="movie-slider-btn movie-slider-btn-prev">
+                    className={`movie-slider-btn movie-slider-btn-prev ${(slideIndex === 0) && 'movie-slider-btn-not-active'}`}>
                     <div className="movie-slider-btn-prev-content"><IoIosArrowBack className="movie-slider-arrow"/></div>
                 </button>
                 <button 
@@ -89,7 +96,7 @@ const MovieSliderRow: React.FC<Props> = ({title, fetchUrl}) => {
                             }
                         }
                     } 
-                    className="movie-slider-btn movie-slider-btn-next">
+                    className={`movie-slider-btn movie-slider-btn-next ${(slideIndex === 16) && 'movie-slider-btn-not-active'}`}>
                     <div className="movie-slider-btn-next-content"><IoIosArrowForward className="movie-slider-arrow"/></div>
                 </button>
             </div>
