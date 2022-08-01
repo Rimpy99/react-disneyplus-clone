@@ -20,10 +20,13 @@ const baseUrl = "https://image.tmdb.org/t/p/original/"
 
 const MovieSliderRow: React.FC<Props> = ({title, fetchUrl}) => {
 
+
     const [ movies, setMovies ] = useState<any[]>([]);
-    const [ slideIndex, setSlideIndex ] = useState<number>(0)
+    const [ slideIndex, setSlideIndex ] = useState<number>(0);
+    const [ notDarkenSlides, setNotDarkenSlides ] = useState<number[]>([0, 1, 2, 3, 4]); 
 
     const movieSliderRef = useRef<Slider | null>(null);
+
 
     useEffect(()=>{
         const fetchData = async () => {
@@ -39,8 +42,26 @@ const MovieSliderRow: React.FC<Props> = ({title, fetchUrl}) => {
     }, [fetchUrl]);
 
     useEffect(()=>{
+        switch(slideIndex){
+            case 0: 
+                setNotDarkenSlides([0, 1, 2, 3, 4]);
+                break;
+            case 4: 
+                setNotDarkenSlides([5, 6, 7, 8, 9]);
+                break;
+            case 8: 
+                setNotDarkenSlides([9, 10, 11, 12, 13]);
+                break;
+            case 12:  
+                setNotDarkenSlides([13, 14, 15, 16, 17]);
+                break;
+            case 16:  
+                setNotDarkenSlides([17, 18, 19]);
+                break;
+        }
         console.log(slideIndex)
     },[slideIndex])
+
 
     const sliderSettings = {
         arrows: false,
@@ -52,7 +73,16 @@ const MovieSliderRow: React.FC<Props> = ({title, fetchUrl}) => {
         infinite: false,
         beforeChange: (current: number, next: number) => {
             setSlideIndex(next);
-        }
+        },
+        // responsive: [
+        //     {
+        //         breakpoint: 1440,
+        //         settings: {
+        //             slidesToShow: 3,
+        //             slidesToScroll: 3,
+        //         }
+        //     }
+        // ]
     }
 
     return(
@@ -62,7 +92,13 @@ const MovieSliderRow: React.FC<Props> = ({title, fetchUrl}) => {
                 <Slider ref={movieSliderRef} {...sliderSettings}>
                     {movies.map((movie, index)=>{
                         return (
-                            <div className={`movie-slide-container ${index === 0 && 'movie-slide-first'}`} key={index}>
+                            <div className=
+                                {`
+                                    movie-slide-container
+                                    ${notDarkenSlides.includes(index) ? 'movie-slide-container-active' : 'movie-slide-container-not-active'}
+                                    ${index === 0 && 'movie-slide-first'} 
+                                `} 
+                                key={index}>
                                 <div className="movie-slide">
                                     <div className="movie-slide-content">
                                         <img 
