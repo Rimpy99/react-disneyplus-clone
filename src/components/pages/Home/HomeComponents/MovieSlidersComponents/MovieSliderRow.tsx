@@ -18,6 +18,7 @@ interface Props{
 
 const baseUrl = "https://image.tmdb.org/t/p/original/"
 
+
 const MovieSliderRow: React.FC<Props> = ({title, fetchUrl}) => {
 
 
@@ -27,7 +28,10 @@ const MovieSliderRow: React.FC<Props> = ({title, fetchUrl}) => {
 
     const movieSliderRef = useRef<Slider | null>(null);
 
+    const [ windowWidth, setWindowWidth ] = useState<number>(window.innerWidth);
+    const passWindowWidth = () => setWindowWidth(window.innerWidth);
 
+    //FETCHING DATA
     useEffect(()=>{
         const fetchData = async () => {
             const request = await axios.get(fetchUrl);
@@ -41,26 +45,65 @@ const MovieSliderRow: React.FC<Props> = ({title, fetchUrl}) => {
         }
     }, [fetchUrl]);
 
+    //LISTEN TO RESIZE EVENT AND CHANGE windowWidth VARIABLE
     useEffect(()=>{
-        switch(slideIndex){
-            case 0: 
-                setNotDarkenSlides([0, 1, 2, 3, 4]);
-                break;
-            case 4: 
-                setNotDarkenSlides([5, 6, 7, 8, 9]);
-                break;
-            case 8: 
-                setNotDarkenSlides([9, 10, 11, 12, 13]);
-                break;
-            case 12:  
-                setNotDarkenSlides([13, 14, 15, 16, 17]);
-                break;
-            case 16:  
-                setNotDarkenSlides([17, 18, 19]);
-                break;
+        window.addEventListener('resize', passWindowWidth);
+        return () => window.removeEventListener('resize', passWindowWidth);
+    }, [windowWidth]);
+
+
+    useEffect(()=>{
+        if(windowWidth > 1000){
+            switch(slideIndex){
+                case 0: 
+                    setNotDarkenSlides([0, 1, 2, 3, 4]);
+                    break;
+                case 4: 
+                    setNotDarkenSlides([5, 6, 7, 8, 9]);
+                    break;
+                case 8: 
+                    setNotDarkenSlides([9, 10, 11, 12, 13]);
+                    break;
+                case 12:  
+                    setNotDarkenSlides([13, 14, 15, 16, 17]);
+                    break;
+                case 16:  
+                    setNotDarkenSlides([17, 18, 19]);
+                    break;
+            }
+        }else{
+            switch(slideIndex){
+                case 0: 
+                    setNotDarkenSlides([0, 1, 2]);
+                    break;
+                case 2: 
+                    setNotDarkenSlides([3,4,5]);
+                    break;
+                case 4: 
+                    setNotDarkenSlides([5,6,7]);
+                    break;
+                case 6:  
+                    setNotDarkenSlides([7,8,9]);
+                    break;
+                case 8:  
+                    setNotDarkenSlides([9,10,11]);
+                    break;
+                case 10:  
+                    setNotDarkenSlides([11,12,13]);
+                    break;
+                case 12:  
+                    setNotDarkenSlides([13,14,15]);
+                    break;
+                case 14:  
+                    setNotDarkenSlides([15,16,17]);
+                    break;
+                case 16:  
+                    setNotDarkenSlides([17,18,19]);
+                    break;
+            }
         }
         console.log(slideIndex)
-    },[slideIndex])
+    },[slideIndex, windowWidth])
 
 
     const sliderSettings = {
@@ -74,15 +117,15 @@ const MovieSliderRow: React.FC<Props> = ({title, fetchUrl}) => {
         beforeChange: (current: number, next: number) => {
             setSlideIndex(next);
         },
-        // responsive: [
-        //     {
-        //         breakpoint: 1440,
-        //         settings: {
-        //             slidesToShow: 3,
-        //             slidesToScroll: 3,
-        //         }
-        //     }
-        // ]
+        responsive: [
+            {
+                breakpoint: 1000,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            }
+        ]
     }
 
     return(
