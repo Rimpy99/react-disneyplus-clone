@@ -1,0 +1,33 @@
+.originals-container{
+    position: relative;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 500;
+    position: sticky;
+    top: 72px;
+    left: 0;
+}
+
+.header-after-scroll{
+    background-color: #1A1D29;
+}
+
+.originals-headline{
+    color: white;
+    letter-spacing: 12px;
+    transition: all .3s;
+}
+
+.originals-headline-initial{
+    font-size: 40px;
+    padding: 100px 0;
+}
+
+.originals-headline-after-scroll{
+    font-size: 20px;
+    padding: 50px 0;
+}
