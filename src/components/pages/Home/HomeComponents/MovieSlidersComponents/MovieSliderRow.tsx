@@ -41,7 +41,7 @@ const MovieSliderRow: React.FC<Props> = ({title, fetchUrl}) => {
         try{
             fetchData();
         }catch(error){
-            console.log(`An error occured: ${error}`)
+            console.log(`An error occured: ${error}`);
         }
     }, [fetchUrl]);
 
