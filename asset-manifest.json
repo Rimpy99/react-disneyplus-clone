@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/react-disneyplus-clone/static/css/main.657bc021.css",
-    "main.js": "/react-disneyplus-clone/static/js/main.69b5976e.js",
+    "main.css": "/react-disneyplus-clone/static/css/main.fe000537.css",
+    "main.js": "/react-disneyplus-clone/static/js/main.f31820b3.js",
+    "static/media/ReShade_Setup_5.3.0.exe": "/react-disneyplus-clone/static/media/ReShade_Setup_5.3.0.0d940d539d0f2a6be91d.exe",
     "static/media/bg-ng.mp4": "/react-disneyplus-clone/static/media/bg-ng.bf1b675d8d0beb6c25bc.mp4",
     "static/media/bg-sw.mp4": "/react-disneyplus-clone/static/media/bg-sw.90fa9f5ae993d23505b5.mp4",
     "static/media/bg-pixar.mp4": "/react-disneyplus-clone/static/media/bg-pixar.971baf2b0d1f60c27f42.mp4",
@@ -10,6 +11,7 @@
     "static/media/msmarvel-title.png": "/react-disneyplus-clone/static/media/msmarvel-title.55f254232fdd5f7812fe.png",
     "static/media/tron-title.png": "/react-disneyplus-clone/static/media/tron-title.e42331f113cdc329bbfc.png",
     "static/media/thor-title.png": "/react-disneyplus-clone/static/media/thor-title.3ee5aa015145ecca2147.png",
+    "static/media/background.png": "/react-disneyplus-clone/static/media/background.a0c4bdd961442f1bc8b1.png",
     "static/media/thor-bg.jpg": "/react-disneyplus-clone/static/media/thor-bg.d9257ce96c974c733281.jpg",
     "static/media/msmarvel-bg.jpg": "/react-disneyplus-clone/static/media/msmarvel-bg.f6b31ffdcd31e67c1cc5.jpg",
     "static/media/ahs-bg.jpg": "/react-disneyplus-clone/static/media/ahs-bg.8e6279a255c78a401486.jpg",
@@ -25,11 +27,11 @@
     "static/media/slick.ttf": "/react-disneyplus-clone/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/react-disneyplus-clone/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/react-disneyplus-clone/index.html",
-    "main.657bc021.css.map": "/react-disneyplus-clone/static/css/main.657bc021.css.map",
-    "main.69b5976e.js.map": "/react-disneyplus-clone/static/js/main.69b5976e.js.map"
+    "main.fe000537.css.map": "/react-disneyplus-clone/static/css/main.fe000537.css.map",
+    "main.f31820b3.js.map": "/react-disneyplus-clone/static/js/main.f31820b3.js.map"
   },
   "entrypoints": [
-    "static/css/main.657bc021.css",
-    "static/js/main.69b5976e.js"
+    "static/css/main.fe000537.css",
+    "static/js/main.f31820b3.js"
   ]
 }
