@@ -5,8 +5,7 @@ const SeriesPage = () => {
 
     return(
         <>
-            <h1>SeriesPage</h1>
-            <RowsOfMovies fetchUrl={requests.fetchComedyMovies}/>
+            <RowsOfMovies fetchUrl={requests.fetchActionMovies} title={"Series"}/>
         </>
     )
 }

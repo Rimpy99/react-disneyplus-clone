@@ -8,9 +8,10 @@ const baseUrl = "https://image.tmdb.org/t/p/original/"
 
 interface Props{
     fetchUrl: string,
+    title: string,
 }
 
-const RowsOfMovies:React.FC<Props> = ({fetchUrl}) => {
+const RowsOfMovies:React.FC<Props> = ({fetchUrl, title}) => {
 
     const [ movies, setMovies ] = useState<any[]>([]);
 
@@ -28,14 +29,20 @@ const RowsOfMovies:React.FC<Props> = ({fetchUrl}) => {
     },[fetchUrl])
 
     return(
-        <div className='RowsOfMovies-container'>
-            {movies.map((movie,index)=>{
-                return( 
-                    <div className="movie-block" key={`movie-block-${index}`}>
-                        <img src={`${baseUrl}${movie.poster_path}`}/>
-                    </div>
-                )
-            })}
+        <div className="RowsOfMovies-container">
+            <div className="RowsOfMovies-header">{title}</div>
+            <div className="RowsOfMovies-content">
+                {movies.map((movie,index)=>{
+                    return( 
+                        <div className="movie-block-container" key={`movie-block-${index}`}>
+                            <div className="movie-block-content">
+                                <img src={`${baseUrl}${movie.poster_path}`} className='movie-block-img'/>
+                                <div className="movie-block-border"/>
+                            </div>
+                        </div>
+                    )
+                })}
+            </div>
         </div>
     )
 }
