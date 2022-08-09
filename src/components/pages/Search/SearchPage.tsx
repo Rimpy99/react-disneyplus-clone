@@ -48,6 +48,7 @@ const SearchPage = () => {
                 placeholder="Search by title, character, or genre"
                 onChange={(e)=>setSearchInput(e.target.value)}
             />
+            <div className="search-header">Explore</div>
             <div className="search-content">
                 <div className="search-content-movies">
                     {movies.map((movie,index)=>{
