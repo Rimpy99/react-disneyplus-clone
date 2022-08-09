@@ -1,0 +1,39 @@
+.search-container{
+    width: 100%;
+}
+
+.search-engine{
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    padding: 25px 100px;
+    background: rgb(81,81,93);
+    background: linear-gradient(180deg, rgba(81,81,93,1) 19%, rgba(111,112,129,1) 100%);
+    filter: brightness(70%);
+    border: none;
+    outline: none;
+    transition: all .3s;
+    color: white;
+}
+
+.search-engine:focus{
+    filter: brightness(100%);
+}
+
+.search-content{
+    padding-top: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.search-content-movies{
+    display: grid;
+    grid-template-columns: repeat(5, calc(16.5vw + 0.05*16.5vw));
+    gap: 1vw;
+}
