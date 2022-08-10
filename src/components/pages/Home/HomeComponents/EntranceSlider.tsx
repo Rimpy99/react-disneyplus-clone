@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react';
 import './EntranceSlider.css';
 
+import { Link } from "react-router-dom";
+
 import ENTRANCE_SLIDER_DATA from '../../../../assets/images/home-images/entrance-slider/HomePageEntranceSliderData';
 
 import Slider from 'react-slick';
@@ -61,22 +63,24 @@ const EntranceSlider: React.FC = () => {
                     ENTRANCE_SLIDER_DATA.map(({background, title}, index) => {
                         return (
                             <div className="entrance-slide" key={`slide-${index}`} >
-                                <img 
-                                    src={require(`./../../../../assets/images/home-images/entrance-slider/${background}`)} 
-                                    alt="film's wallpaper" 
-                                    className={`entrance-slide-image ${index !== slideIndex && 'entrance-slide-image-not-active'}`}
-                                />
-                                <div className="entrance-slide-border"></div>
-                                {index === slideIndex && 
-                                    <motion.img
-                                        src={require(`./../../../../assets/images/home-images/entrance-slider/${title}`)} 
-                                        alt="film's title"
-                                        className="entrance-slide-title"
-                                        variants={activeSlideVariants} 
-                                        initial="hidden" 
-                                        animate="visible"
+                                <Link to="/details">
+                                    <img 
+                                        src={require(`./../../../../assets/images/home-images/entrance-slider/${background}`)} 
+                                        alt="film's wallpaper" 
+                                        className={`entrance-slide-image ${index !== slideIndex && 'entrance-slide-image-not-active'}`}
                                     />
-                                }
+                                    <div className="entrance-slide-border"></div>
+                                    {index === slideIndex && 
+                                        <motion.img
+                                            src={require(`./../../../../assets/images/home-images/entrance-slider/${title}`)} 
+                                            alt="film's title"
+                                            className="entrance-slide-title"
+                                            variants={activeSlideVariants} 
+                                            initial="hidden" 
+                                            animate="visible"
+                                        />
+                                    }
+                                </Link>
                             </div>
                         )
                     })

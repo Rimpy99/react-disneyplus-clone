@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 
+import { Link } from "react-router-dom";
+
 import './MovieSliderRow.css';
 
 import Slider from 'react-slick';
@@ -142,16 +144,18 @@ const MovieSliderRow: React.FC<Props> = ({title, fetchUrl}) => {
                                     ${index === 0 && 'movie-slide-first'} 
                                 `} 
                                 key={index}>
-                                <div className="movie-slide">
-                                    <div className="movie-slide-content">
-                                        <img 
-                                            src={`${baseUrl}${movie.poster_path}`} 
-                                            className="movie-slide-img"
-                                            alt={title}
-                                        />
-                                        <div className="movie-slide-border"/>
+                                <Link to="/details">
+                                    <div className="movie-slide">
+                                        <div className="movie-slide-content">
+                                            <img 
+                                                src={`${baseUrl}${movie.poster_path}`} 
+                                                className="movie-slide-img"
+                                                alt={title}
+                                            />
+                                            <div className="movie-slide-border"/>
+                                        </div>
                                     </div>
-                                </div>
+                                </Link>
                             </div>
                         )
                     })}

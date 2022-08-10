@@ -11,6 +11,7 @@ import WatchListPage from './components/pages/WatchList/WatchListPage';
 import OriginalsPage from './components/pages/Originals/OriginalsPage';
 import MoviesPage from './components/pages/Movies/MoviesPage';
 import SeriesPage from './components/pages/Series/SeriesPage';
+import Details from './components/pages/Details/Details';
 
 const App: React.FC = () => {
   return (
@@ -26,6 +27,7 @@ const App: React.FC = () => {
           <Route path="/originals" element={<OriginalsPage/>}/>
           <Route path="/movies" element={<MoviesPage/>}/>
           <Route path="/series" element={<SeriesPage/>}/>
+          <Route path="/details" element={<Details/>}/>
         </Routes>
       </BrowserRouter>
     </div>

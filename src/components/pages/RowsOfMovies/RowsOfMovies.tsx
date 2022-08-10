@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+import { Link } from "react-router-dom";
+
 import './RowsOfMovies.css';
 
 import axios from './../../../API/Axios';
@@ -34,12 +36,14 @@ const RowsOfMovies:React.FC<Props> = ({fetchUrl, title}) => {
             <div className="RowsOfMovies-content">
                 {movies.map((movie,index)=>{
                     return( 
-                        <div className="movie-block-container" key={`movie-block-${index}`}>
-                            <div className="movie-block-content">
-                                <img src={`${baseUrl}${movie.poster_path}`} className='movie-block-img'/>
-                                <div className="movie-block-border"/>
+                        <Link to="/details">
+                            <div className="movie-block-container" key={`movie-block-${index}`}>
+                                <div className="movie-block-content">
+                                    <img src={`${baseUrl}${movie.poster_path}`} className='movie-block-img'/>
+                                    <div className="movie-block-border"/>
+                                </div>
                             </div>
-                        </div>
+                        </Link>
                     )
                 })}
             </div>

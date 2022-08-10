@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+import { Link } from "react-router-dom";
+
 import "./SearchPage.css";
 
 import axios from './../../../API/Axios';
@@ -53,12 +55,14 @@ const SearchPage = () => {
                 <div className="search-content-movies">
                     {movies.map((movie,index)=>{
                         return( 
-                            <div className="movie-block-container" key={`movie-block-${index}`}>
-                                <div className="movie-block-content">
-                                    <img src={`${baseUrl}${movie.poster_path}`} className='movie-block-img'/>
-                                    <div className="movie-block-border"/>
+                            <Link to="/details">
+                                <div className="movie-block-container" key={`movie-block-${index}`}>
+                                    <div className="movie-block-content">
+                                        <img src={`${baseUrl}${movie.poster_path}`} className='movie-block-img'/>
+                                        <div className="movie-block-border"/>
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                         )
                     })}
                 </div>
