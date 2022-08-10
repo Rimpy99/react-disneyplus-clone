@@ -1,5 +1,6 @@
 .originals-container{
     position: relative;
+    padding-top: 20px;
 }
 
 header{
@@ -8,7 +9,7 @@ header{
     justify-content: center;
     z-index: 500;
     position: sticky;
-    top: 72px;
+    top: 70px;
     left: 0;
 }
 
@@ -20,14 +21,31 @@ header{
     color: white;
     letter-spacing: 12px;
     transition: all .3s;
+    padding: 70px 0;
 }
 
 .originals-headline-initial{
     font-size: 40px;
-    padding: 100px 0;
 }
 
 .originals-headline-after-scroll{
     font-size: 20px;
-    padding: 50px 0;
+}
+
+.originals-sliders-container{
+    padding-top: 30px;
+}
+
+@media all and (max-width: 700px){
+    .originals-headline{
+        padding: 30px 0;
+    }
+
+    .originals-headline-initial{
+        font-size: 30px;
+    }
+
+    .originals-headline-after-scroll{
+        font-size: 15px;
+    }
 }
