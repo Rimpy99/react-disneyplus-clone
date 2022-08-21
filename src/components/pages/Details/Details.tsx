@@ -1,6 +1,10 @@
+import "./Details.css";
+
 const Details = () => {
     return(
-        <div style={{color: "white"}}>DETAILS</div>
+        <div className="details-container">
+            DETAILS
+        </div>
     )
 }
 
