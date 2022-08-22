@@ -1,5 +1,6 @@
 .details-container{
     width: 100%;
+    background-color: aqua;
 }
 
 .details-content{
@@ -10,13 +11,13 @@
     width: 100%;
 }
 
-.details-space{
+/* .details-space{
     height: 200px;
     background-color: aliceblue;
-}
+} */
 
 .details-footer{
     height: 70px;
     background-color: red;
-
+    margin-top: 300px;
 }
