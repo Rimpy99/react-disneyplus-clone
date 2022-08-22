@@ -1,0 +1,22 @@
+.details-container{
+    width: 100%;
+}
+
+.details-content{
+    width: 100%;
+}
+
+.details-img{
+    width: 100%;
+}
+
+.details-space{
+    height: 200px;
+    background-color: aliceblue;
+}
+
+.details-footer{
+    height: 70px;
+    background-color: red;
+
+}
