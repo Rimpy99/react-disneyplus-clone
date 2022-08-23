@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-disneyplus-clone/static/css/main.bc19c53f.css",
-    "main.js": "/react-disneyplus-clone/static/js/main.644ad6d4.js",
+    "main.css": "/react-disneyplus-clone/static/css/main.191824ca.css",
+    "main.js": "/react-disneyplus-clone/static/js/main.92c43fab.js",
     "static/media/ReShade_Setup_5.3.0.exe": "/react-disneyplus-clone/static/media/ReShade_Setup_5.3.0.0d940d539d0f2a6be91d.exe",
     "static/media/bg-ng.mp4": "/react-disneyplus-clone/static/media/bg-ng.bf1b675d8d0beb6c25bc.mp4",
     "static/media/bg-sw.mp4": "/react-disneyplus-clone/static/media/bg-sw.90fa9f5ae993d23505b5.mp4",
@@ -14,6 +14,7 @@
     "static/media/background.png": "/react-disneyplus-clone/static/media/background.a0c4bdd961442f1bc8b1.png",
     "static/media/thor-bg.jpg": "/react-disneyplus-clone/static/media/thor-bg.d9257ce96c974c733281.jpg",
     "static/media/msmarvel-bg.jpg": "/react-disneyplus-clone/static/media/msmarvel-bg.f6b31ffdcd31e67c1cc5.jpg",
+    "static/media/ba-bg.jpg": "/react-disneyplus-clone/static/media/ba-bg.e3006d8bef77c84cc753.jpg",
     "static/media/ahs-bg.jpg": "/react-disneyplus-clone/static/media/ahs-bg.8e6279a255c78a401486.jpg",
     "static/media/disney-logo.png": "/react-disneyplus-clone/static/media/disney-logo.6e15dcf1ed49d3e8849d.png",
     "static/media/tron-bg.jpg": "/react-disneyplus-clone/static/media/tron-bg.d7006a4aaccc464616e6.jpg",
@@ -27,11 +28,11 @@
     "static/media/slick.ttf": "/react-disneyplus-clone/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/react-disneyplus-clone/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/react-disneyplus-clone/index.html",
-    "main.bc19c53f.css.map": "/react-disneyplus-clone/static/css/main.bc19c53f.css.map",
-    "main.644ad6d4.js.map": "/react-disneyplus-clone/static/js/main.644ad6d4.js.map"
+    "main.191824ca.css.map": "/react-disneyplus-clone/static/css/main.191824ca.css.map",
+    "main.92c43fab.js.map": "/react-disneyplus-clone/static/js/main.92c43fab.js.map"
   },
   "entrypoints": [
-    "static/css/main.bc19c53f.css",
-    "static/js/main.644ad6d4.js"
+    "static/css/main.191824ca.css",
+    "static/js/main.92c43fab.js"
   ]
 }
