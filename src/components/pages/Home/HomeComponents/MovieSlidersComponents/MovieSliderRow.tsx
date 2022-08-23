@@ -37,6 +37,7 @@ const MovieSliderRow: React.FC<Props> = ({title, fetchUrl}) => {
     useEffect(()=>{
         const fetchData = async () => {
             const request = await axios.get(fetchUrl);
+            console.log(request.data.results)
             setMovies(request.data.results);
         }
 
@@ -104,7 +105,6 @@ const MovieSliderRow: React.FC<Props> = ({title, fetchUrl}) => {
                     break;
             }
         }
-        console.log(slideIndex)
     },[slideIndex, windowWidth])
 
 

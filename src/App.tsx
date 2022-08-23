@@ -4,6 +4,7 @@ import './App.css';
 
 //components
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 //pages
 import HomePage from './components/pages/Home/HomePage'
 import SearchPage from './components/pages/Search/SearchPage';
@@ -15,22 +16,25 @@ import Details from './components/pages/Details/Details';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
+    <>
       <BrowserRouter>
         <Navbar/>
-        <Routes>
-          <Route path="/" element={<Navigate to="/home"/>}/>
-          <Route path="/react-disneyplus-clone" element={<Navigate to="/home"/>}/>
-          <Route path="/home" element={<HomePage/>}/>
-          <Route path="/search" element={<SearchPage/>}/>
-          <Route path="/watchlist" element={<WatchListPage/>}/>
-          <Route path="/originals" element={<OriginalsPage/>}/>
-          <Route path="/movies" element={<MoviesPage/>}/>
-          <Route path="/series" element={<SeriesPage/>}/>
-          <Route path="/details" element={<Details/>}/>
-        </Routes>
+        <div className="App-content">
+          <Routes>
+            <Route path="/" element={<Navigate to="/home"/>}/>
+            <Route path="/react-disneyplus-clone" element={<Navigate to="/home"/>}/>
+            <Route path="/home" element={<HomePage/>}/>
+            <Route path="/search" element={<SearchPage/>}/>
+            <Route path="/watchlist" element={<WatchListPage/>}/>
+            <Route path="/originals" element={<OriginalsPage/>}/>
+            <Route path="/movies" element={<MoviesPage/>}/>
+            <Route path="/series" element={<SeriesPage/>}/>
+            <Route path="/details/:id" element={<Details/>}/>
+          </Routes>
+        </div>
+        <Footer/>
       </BrowserRouter>
-    </div>
+    </>
   );
 }
 

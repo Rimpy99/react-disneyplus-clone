@@ -13,8 +13,6 @@ body{
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  /* background: rgb(45,48,59);
-  background: radial-gradient(circle, rgba(45,48,59,1) 0%, rgba(17,21,42,1) 100%); */
   background-image: url('./assets/images/background.png');
   background-attachment: fixed;
   background-position: center;
