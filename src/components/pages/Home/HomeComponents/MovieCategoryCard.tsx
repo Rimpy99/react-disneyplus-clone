@@ -1,8 +1,6 @@
 import React from 'react';
 import './MovieCategoryCard.css';
 
-import { Link } from "react-router-dom";
-
 interface Props{
     cardContent: PropsObjectTemplate,
 }
@@ -23,11 +21,11 @@ const MovieCategoryCard: React.FC<Props> = ({cardContent}) => {
     }
 
     return(
-        <Link to="/details">
             <div className="category">
                 <img 
                     src={require(`./../../../../assets/images/home-images/movie-categories/${cardContent.logo}`)} 
                     className="category-logo"
+                    alt="category card"
                 />
                 <div className="category-border"></div>
                 <video 
@@ -40,7 +38,6 @@ const MovieCategoryCard: React.FC<Props> = ({cardContent}) => {
                     onMouseOut={videoPause}
                 />
             </div>
-        </Link>
     )
 }
 

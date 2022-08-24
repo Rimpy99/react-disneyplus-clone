@@ -37,7 +37,7 @@ const MovieSliderRow: React.FC<Props> = ({title, fetchUrl}) => {
     useEffect(()=>{
         const fetchData = async () => {
             const request = await axios.get(fetchUrl);
-            console.log(request.data.results)
+            // console.log(request.data.results)
             setMovies(request.data.results);
         }
 
@@ -144,7 +144,7 @@ const MovieSliderRow: React.FC<Props> = ({title, fetchUrl}) => {
                                     ${index === 0 && 'movie-slide-first'} 
                                 `} 
                                 key={index}>
-                                <Link to="/details">
+                                <Link to={`/details/` + movie.id}>
                                     <div className="movie-slide">
                                         <div className="movie-slide-content">
                                             <img 
