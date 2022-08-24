@@ -4,9 +4,12 @@ import './index.css';
 import App from './App';
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from 'react-redux';
+import watchListReducer from './features/WatchListData';
 
 const store = configureStore({
-  reducer: {},
+  reducer: {
+    watchListMovies: watchListReducer,
+  },
 });
 
 const root = ReactDOM.createRoot(

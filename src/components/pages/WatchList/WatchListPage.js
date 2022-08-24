@@ -1,7 +1,15 @@
+import { useSelector } from  'react-redux';
+import { selectWatchListMovies } from './../../../features/WatchListData';
+
 const WatchListPage = () => {
+    const watchListMovies = useSelector(selectWatchListMovies)
 
     return(
-        <h1>WatchListPage</h1>
+        <>
+            {watchListMovies.map((movie)=>{
+                return <p style={{color: "white", padding: 100}}>{movie.title}</p>
+            })}
+        </>
     )
 }
 
