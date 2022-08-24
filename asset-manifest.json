@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-disneyplus-clone/static/css/main.191824ca.css",
-    "main.js": "/react-disneyplus-clone/static/js/main.92c43fab.js",
+    "main.css": "/react-disneyplus-clone/static/css/main.c675446e.css",
+    "main.js": "/react-disneyplus-clone/static/js/main.37cf91b6.js",
     "static/media/ReShade_Setup_5.3.0.exe": "/react-disneyplus-clone/static/media/ReShade_Setup_5.3.0.0d940d539d0f2a6be91d.exe",
     "static/media/bg-ng.mp4": "/react-disneyplus-clone/static/media/bg-ng.bf1b675d8d0beb6c25bc.mp4",
     "static/media/bg-sw.mp4": "/react-disneyplus-clone/static/media/bg-sw.90fa9f5ae993d23505b5.mp4",
@@ -28,11 +28,11 @@
     "static/media/slick.ttf": "/react-disneyplus-clone/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/react-disneyplus-clone/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/react-disneyplus-clone/index.html",
-    "main.191824ca.css.map": "/react-disneyplus-clone/static/css/main.191824ca.css.map",
-    "main.92c43fab.js.map": "/react-disneyplus-clone/static/js/main.92c43fab.js.map"
+    "main.c675446e.css.map": "/react-disneyplus-clone/static/css/main.c675446e.css.map",
+    "main.37cf91b6.js.map": "/react-disneyplus-clone/static/js/main.37cf91b6.js.map"
   },
   "entrypoints": [
-    "static/css/main.191824ca.css",
-    "static/js/main.92c43fab.js"
+    "static/css/main.c675446e.css",
+    "static/js/main.37cf91b6.js"
   ]
 }
