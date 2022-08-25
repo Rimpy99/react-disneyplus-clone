@@ -19,6 +19,7 @@ const Details = () => {
         title: '',
         description: '',
         poster: '',
+        id: '', 
     })
 
     useEffect(()=>{
@@ -30,6 +31,7 @@ const Details = () => {
                 title: request.data.original_title,
                 description: request.data.overview,
                 poster: request.data.poster_path,
+                id: request.data.id,
             })
         }
 
@@ -60,7 +62,7 @@ const Details = () => {
                     <div className="details-contetn-btn-add-container">
                         <div 
                             className="details-content-btn-add"
-                            onClick={() => dispatch(add({title: movieData.title, poster: movieData.poster}))}
+                            onClick={() => dispatch(add({title: movieData.title, poster: movieData.poster, id: movieData.id}))}
                         >
                             <HiPlusSm size="30" className="details-content-btn-add-plus"/>
                         </div>
