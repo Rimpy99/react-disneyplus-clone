@@ -80,11 +80,17 @@
 
 .details-content-btn-add{
     background-color: black;
-    padding: 8px 8px 5px;
+    padding: 2px 5px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     border: 3px solid white;
     transition: background-color .3s;
     cursor: pointer;
+}
+
+.details-content-btn{
+    padding-top: 3px;
 }
 
 .details-content-btn-add:hover{

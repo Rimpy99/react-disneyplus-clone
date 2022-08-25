@@ -1,16 +1,36 @@
 import "./Details.css";
 import { useEffect, useState} from "react";
 import { useParams } from 'react-router-dom';
+
+//Imports connected to REDUX
 import { useDispatch, useSelector } from 'react-redux';
 import { add } from '../../../features/WatchListData';
 import { del } from '../../../features/WatchListData';
 import { selectWatchListMovies } from '../../../features/WatchListData';
 
+//Imports connected to REACT-ICONS
 import { HiPlusSm } from "react-icons/hi";
 import { BsPlayFill, BsX } from "react-icons/bs"; 
 
+//Imports connected to API
 import axios from '../../../API/Axios';
 import requests from "../../../API/Api";
+
+//Imports connected to FRAMER-MOTION
+import { motion, AnimatePresence } from "framer-motion";
+
+
+const buttonVariants = {
+    hidden: {
+        opacity: 0,
+    },
+    visible: {
+        opacity: 1,
+        transition: {
+            delay: .2,
+        }
+    }
+}
 
 const Details = () => {
     const dispatch = useDispatch();
@@ -59,6 +79,7 @@ const Details = () => {
                 <img 
                     src={require("./../../../assets/images/home-images/details/ba-bg.jpg")} 
                     className="details-img details-img-fade-bottom details-img-fade-left"
+                    alt="background"
                 />
                 <div className="details-content-inner-shadow shadow-left"/>
                 <div className="details-content-inner-shadow shadow-bottom"/>
@@ -75,10 +96,30 @@ const Details = () => {
                             className="details-content-btn-add"
                             onClick={() => changeWatchListSliceState()}
                         >
-                            {watchListMovies.filter(e => e.id === movieData.id).length > 0 ?
-                                <BsX size="30" className="details-content-btn-add-plus"/> :
-                                <HiPlusSm size="30" className="details-content-btn-add-plus"/> 
-                            }
+                            <AnimatePresence>
+                                {watchListMovies.filter(e => e.id === movieData.id).length > 0
+                                    ?   <motion.div 
+                                            variants={buttonVariants} 
+                                            initial="hidden" 
+                                            animate="visible" 
+                                            exit={{rotate: 90, opacity: 0, transition: {duration: .2}}} 
+                                            key="add-btn" 
+                                            className="details-content-btn"
+                                        >
+                                            <BsX size="30" className="details-content-btn-add-plus"/>
+                                        </motion.div>
+                                    :   <motion.div 
+                                            variants={buttonVariants} 
+                                            initial="hidden" 
+                                            animate="visible" 
+                                            exit={{rotate: 90, opacity: 0, transition: {duration: .2}}} 
+                                            key="del-btn" 
+                                            className="details-content-btn"
+                                        >
+                                            <HiPlusSm size="30" className="details-content-btn-add-plus"/>
+                                        </motion.div> 
+                                }
+                            </AnimatePresence>
                         </div>
                     </div>
                 </div>
