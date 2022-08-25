@@ -1,17 +1,20 @@
 import "./Details.css";
 import { useEffect, useState} from "react";
 import { useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { add } from './../../../features/WatchListData';
+import { useDispatch, useSelector } from 'react-redux';
+import { add } from '../../../features/WatchListData';
+import { del } from '../../../features/WatchListData';
+import { selectWatchListMovies } from '../../../features/WatchListData';
 
 import { HiPlusSm } from "react-icons/hi";
-import { BsPlayFill } from "react-icons/bs";
+import { BsPlayFill, BsX } from "react-icons/bs"; 
 
-import axios from './../../../API/Axios';
-import requests from "./../../../API/Api";
+import axios from '../../../API/Axios';
+import requests from "../../../API/Api";
 
 const Details = () => {
     const dispatch = useDispatch();
+    const watchListMovies = useSelector(selectWatchListMovies)
 
     const { id } = useParams();
 
@@ -40,7 +43,15 @@ const Details = () => {
         }catch(error){
             console.log(`An error occured: ${error}`);
         }
-    },[id])
+    },[id]);
+
+    const changeWatchListSliceState = () => {
+        if(watchListMovies.filter(e => e.id === movieData.id).length > 0){
+            dispatch(del(movieData.id));
+        }else{ 
+            dispatch(add({title: movieData.title, poster: movieData.poster, id: movieData.id}));
+        }
+    }
 
     return(
         <div className="details-container">
@@ -62,9 +73,12 @@ const Details = () => {
                     <div className="details-contetn-btn-add-container">
                         <div 
                             className="details-content-btn-add"
-                            onClick={() => dispatch(add({title: movieData.title, poster: movieData.poster, id: movieData.id}))}
+                            onClick={() => changeWatchListSliceState()}
                         >
-                            <HiPlusSm size="30" className="details-content-btn-add-plus"/>
+                            {watchListMovies.filter(e => e.id === movieData.id).length > 0 ?
+                                <BsX size="30" className="details-content-btn-add-plus"/> :
+                                <HiPlusSm size="30" className="details-content-btn-add-plus"/> 
+                            }
                         </div>
                     </div>
                 </div>

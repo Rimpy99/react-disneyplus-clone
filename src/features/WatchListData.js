@@ -5,10 +5,12 @@ const watchListSlice = createSlice({
     initialState: [],
     reducers: {
         add: (state, { payload }) => { state.push(payload) },
+        del: (state, { payload }) => { return state.filter(({ id }) => id !== payload) },
     }
 })
 
 export const { add } = watchListSlice.actions;
+export const { del } = watchListSlice.actions;
 
 export const selectWatchListMovies = ({watchListMovies}) => watchListMovies;
 
