@@ -20,6 +20,8 @@ import requests from "../../../API/Api";
 import { motion, AnimatePresence } from "framer-motion";
 
 
+const baseUrl = "https://image.tmdb.org/t/p/original/";
+
 const buttonVariants = {
     hidden: {
         opacity: 0,
@@ -77,7 +79,7 @@ const Details = () => {
         <div className="details-container">
             <div className="details-background">
                 <img 
-                    src={require("./../../../assets/images/home-images/details/ba-bg.jpg")} 
+                    src={`${baseUrl}${movieData.poster}`}
                     className="details-img details-img-fade-bottom details-img-fade-left"
                     alt="background"
                 />

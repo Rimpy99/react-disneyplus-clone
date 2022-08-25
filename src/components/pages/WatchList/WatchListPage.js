@@ -4,7 +4,7 @@ import { selectWatchListMovies } from './../../../features/WatchListData';
 
 import './WatchListPage.css';
 
-const baseUrl = "https://image.tmdb.org/t/p/original/"
+const baseUrl = "https://image.tmdb.org/t/p/original/";
 
 const WatchListPage = () => {
     const watchListMovies = useSelector(selectWatchListMovies)
@@ -19,7 +19,7 @@ const WatchListPage = () => {
                         <Link to={`/details/` + movie.id}>
                             <div className="movie-block-container" key={`movie-block-${movie.id}`}>
                                 <div className="movie-block-content">
-                                    <img src={`${baseUrl}${movie.poster}`} className='movie-block-img' alt=''/>
+                                    <img src={`${baseUrl}${movie.poster}`} className='movie-block-img' alt='movie poster'/>
                                     <div className="movie-block-border"/>
                                 </div>
                             </div>
