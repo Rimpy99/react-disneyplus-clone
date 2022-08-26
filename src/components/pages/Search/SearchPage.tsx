@@ -55,7 +55,7 @@ const SearchPage = () => {
                 <div className="search-content-movies">
                     {movies.map((movie,index)=>{
                         return( 
-                            <Link to="/details">
+                            <Link to={`/details/` + movie.id}>
                                 <div className="movie-block-container" key={`movie-block-${index}`}>
                                     <div className="movie-block-content">
                                         <img src={`${baseUrl}${movie.poster_path}`} className='movie-block-img'/>

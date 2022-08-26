@@ -51,6 +51,11 @@
 }
 
 @media all and (max-width: 1300px){
+    .search-engine{
+        font-size: 30px;
+        padding: 25px 70px;
+    }
+
     .search-header{
         width: 75vw;
     }
@@ -62,6 +67,11 @@
 }
 
 @media all and (max-width: 700px){
+    .search-engine{
+        font-size: 18px;
+        padding: 25px 15px;
+    }
+    
     .search-header{
         width: 80vw;
     }
