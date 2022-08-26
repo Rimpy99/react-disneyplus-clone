@@ -36,7 +36,7 @@
     top: 0;
     left: 0;
     height: 100%;
-    width: 60%;
+    width: 100%;
     padding: 35vh 100px;
 }
 
@@ -112,4 +112,25 @@
     font-size: 20px;
     letter-spacing: 1px;
     border-bottom: 2px solid  white;
+    width: 1000px;
+}
+
+@media all and (max-width: 1200px){
+    .details-content{
+        padding: 25vh 50px;
+    }
+
+    .details-content-desc{
+        width: 100%;
+    }
+}
+
+@media all and (max-width: 800px){
+    .details-content{
+        padding: 20vh 30px;
+    }
+
+    .details-content-title{
+        font-size: 35px;
+    }
 }
