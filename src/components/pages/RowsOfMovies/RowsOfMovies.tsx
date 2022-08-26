@@ -36,7 +36,7 @@ const RowsOfMovies:React.FC<Props> = ({fetchUrl, title}) => {
             <div className="RowsOfMovies-content">
                 {movies.map((movie,index)=>{
                     return( 
-                        <Link to="/details">
+                        <Link to={`/details/` + movie.id}>
                             <div className="movie-block-container" key={`movie-block-${index}`}>
                                 <div className="movie-block-content">
                                     <img src={`${baseUrl}${movie.poster_path}`} className='movie-block-img'/>
