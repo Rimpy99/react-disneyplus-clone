@@ -1,5 +1,5 @@
 import "./Navbar.css"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { motion, AnimatePresence } from "framer-motion";
@@ -9,6 +9,7 @@ import { AiFillHome, AiFillStar } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
 import { RiMovie2Fill } from "react-icons/ri";
 import { BsDisplayFill, BsThreeDotsVertical, BsPlusLg } from "react-icons/bs";
+import { BiArrowFromLeft } from "react-icons/bi";
 
 //animation variants
 const settingsContainerVariants = {
@@ -16,7 +17,20 @@ const settingsContainerVariants = {
         height: 0
     },
     visible: {
-        height: "auto",
+        height: 300,
+        transition: {
+            duration: ".3",
+            type: "ease-in"
+        }
+    },
+}
+
+const responsiveSettingsContainerVariants = {
+    hidden: {
+        height: 0
+    },
+    visible: {
+        height: "100vh",
         transition: {
             duration: ".3",
             type: "ease-in"
@@ -53,6 +67,9 @@ const Navbar = () => {
     const [isProfileOnHover, setIsProfileOnHover] = useState(false);
     const [areDotsOnHover, setAreDotsOnHover] = useState(false);
 
+    const [ windowWidth, setWindowWidth ] = useState(window.innerWidth);
+    const passWindowWidth = () => setWindowWidth(window.innerWidth);
+
     const [changeNavBackground, setChangeNavBackground] = useState(false);
 
     const changeNavBackgroundCondition = () => {
@@ -62,6 +79,12 @@ const Navbar = () => {
             setChangeNavBackground(false);
         }
     }
+
+    //LISTEN TO RESIZE EVENT AND CHANGE windowWidth VARIABLE
+    useEffect(()=>{
+        window.addEventListener('resize', passWindowWidth);
+        return () => window.removeEventListener('resize', passWindowWidth);
+    }, [windowWidth]);
 
     window.addEventListener('scroll', changeNavBackgroundCondition);
 
@@ -170,35 +193,54 @@ const Navbar = () => {
                 </div>
                 <div 
                     className="profile" 
-                    onMouseOver={()=>setIsProfileOnHover(true)} 
-                    onMouseOut={()=>setIsProfileOnHover(false)}
+                    onMouseOver={()=>{windowWidth > 700 && setIsProfileOnHover(true)}} 
+                    onMouseOut={()=>{windowWidth > 700 && setIsProfileOnHover(false)}}
                 >
                     <p>Paul</p>
-                    <img src={require("./../assets/images/user.jpg")} alt="user" className="user-img"/>
-                    {isProfileOnHover && 
-                        <motion.div 
-                            className="settings-container"
-                            variants={settingsContainerVariants}
-                            initial="hidden"
-                            animate="visible"
-                        >
-                            <motion.div
-                                variants={settingsVariants}
+                    <img 
+                        src={require("./../assets/images/user.jpg")} 
+                        alt="user" 
+                        className="user-img"
+                        onClick={()=>{windowWidth < 701 && setIsProfileOnHover(true)}}
+                    />
+                    <AnimatePresence>
+                        {isProfileOnHover && 
+                            <motion.div 
+                                className="settings-container"
+                                variants={windowWidth > 700 ? settingsContainerVariants : responsiveSettingsContainerVariants}
+                                initial="hidden"
+                                animate="visible"
+                                exit={{height: 0, transition: {duration: .3}}}
                             >
-                                <div className="add-profile-container settings-option">
-                                    <div className="add-profile-btn">
-                                        <BsPlusLg/>
+                                {windowWidth < 701 && 
+                                    <div className="return-btn-container">
+                                        <BiArrowFromLeft 
+                                            size="25" 
+                                            className="return-btn"
+                                            onClick={()=>{windowWidth < 701 && setIsProfileOnHover(false)}}
+                                        />
                                     </div>
-                                    Add profile
-                                </div>
-                                <div className="settings-option">Edit profiles</div>
-                                <div className="settings-option">App Settings</div>
-                                <div className="settings-option">Account</div>
-                                <div className="settings-option">Help</div>
-                                <div className="settings-option">Log Out</div>
+                                }   
+                                <motion.div
+                                    variants={settingsVariants}
+                                    exit={{opacity: 0}}
+                                    className="settings-content"
+                                >
+                                    <div className="add-profile-container settings-option">
+                                        <div className="add-profile-btn">
+                                            <BsPlusLg/>
+                                        </div>
+                                        Add profile
+                                    </div>
+                                    <div className="settings-option">Edit profiles</div>
+                                    <div className="settings-option">App Settings</div>
+                                    <div className="settings-option">Account</div>
+                                    <div className="settings-option">Help</div>
+                                    <div className="settings-option">Log Out</div>
+                                </motion.div>
                             </motion.div>
-                        </motion.div>
-                    }
+                        }
+                    </AnimatePresence>
                 </div>
             </div>
         </div>

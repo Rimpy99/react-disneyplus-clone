@@ -103,6 +103,7 @@
 
 .settings-container{
     width: 240px;
+    height: 1300px;
     border-bottom: 1px solid rgb(88, 88, 88);
     border-left: 1px solid rgb(88, 88, 88);
     background-color: rgb(27, 27, 27);
@@ -190,6 +191,15 @@
     opacity: 1;
 }
 
+.return-btn-container{
+    padding: 20px 10px;
+    text-align: end;
+}
+
+.return-btn{
+    cursor: pointer;
+}
+
 @media all and (max-width: 1490px){
     .nav-link{
         padding: 25px 20px;
@@ -229,11 +239,11 @@
     }
 
     .profile p{
-        opacity: 0;
+        display: none;
     }
 
-    .profile:hover p{
-        opacity: 1;
+    .user-img:hover p{
+        display: inline;
     }
 }
 
@@ -265,6 +275,43 @@
         top: 0;
         right: 0;
         padding: 15px;
-        width: 170px;
+        width: 110px;
+    }
+
+    .profile:hover{
+        border-top: 1px solid rgba(88, 88, 88, 0);
+        border-left: 1px solid rgba(88, 88, 88, 0);
+        background-color: transparent;
+    }
+
+    .user-img{
+        cursor: pointer;
+    }
+
+    .settings-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        justify-content: flex-start;
+        border: none;
+    }
+
+    .add-profile-container{
+        border: none;
+    }
+
+    .settings-content{
+        padding: 50px 20px;
+    }
+
+    .settings-option{
+        font-size: 20px;
+        padding: 25px 0;
+        border-top: 1px solid rgb(68, 68, 68);
+    }
+
+    .settings-option:last-child{
+        border-bottom: 1px solid rgb(68, 68, 68);
     }
 }
